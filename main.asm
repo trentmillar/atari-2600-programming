@@ -15,10 +15,11 @@ start:
 
   lda #0    ; A = 0
   ldx #$FF  ; X = #$FF
+  sta $0,X
   
 memloop:
-  sta $0,X    ; store a inside 0 + X
   dex         ; x--
+  sta $0,X    ; store a inside 0 + X
   bne memloop ; x != 0 memloop
   
   org $FFFC
